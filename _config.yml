@@ -6,7 +6,7 @@ name                     : "Yuxiang MA"
 description              : &description "Dr. MA Yuxiang's personal homepage"
 url                      : "https://yuxiangma.com"
 baseurl                  :
-repository               : "mayuxiang/mayuxiang.github.io"
+repository               : "mayuxiang/yuxiangma.com"
 teaser                   :
 breadcrumbs              : false
 words_per_minute         : 200
@@ -16,12 +16,6 @@ talkmap_link             : false
 
 comments:
   provider               : false
-
-# SEO Related
-google_site_verification :
-bing_site_verification   :
-yandex_site_verification :
-
 
 # Site Author
 author:
