@@ -1,0 +1,109 @@
+# Site Settings
+locale                   : "en-US"
+title                    : "YuxiangMa@HENU"
+title_separator          : "-"
+name                     : "Yuxiang MA"
+description              : &description "Dr. MA Yuxiang's personal homepage"
+url                      : "https://yuxiangma.com"
+baseurl                  :
+repository               : "mayuxiang/mayuxiang.github.io"
+teaser                   :
+breadcrumbs              : false
+words_per_minute         : 200
+future                   : true
+read_more                : "disabled"
+talkmap_link             : false
+
+comments:
+  provider               : false
+
+# SEO Related
+google_site_verification :
+bing_site_verification   :
+yandex_site_verification :
+
+
+# Site Author
+author:
+  name             : "Yuxiang MA"
+  avatar           : "me.jpg"
+  bio              :
+  location         :
+  employer         :
+  pubmed           :
+  googlescholar    :
+  email            :
+  researchgate     :
+  uri              :
+  github           :
+  keybase          :
+  linkedin         :
+  orcid            :
+  stackoverflow    :
+  wikipedia        :
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+  - files
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .bundle
+  - .sass-cache
+  - Gemfile
+  - LICENSE
+  - README
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Collections
+collections:
+  publications:
+    output: true
+    permalink: /:collection/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:categories/:title/
+timezone: Asia/Shanghai
+
+# Plugins
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from

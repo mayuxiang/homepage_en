@@ -1,0 +1,66 @@
+{% include base_path %}
+
+{% if page.author and site.data.authors[page.author] %}
+  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
+{% endif %}
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  <div class="author__avatar">
+    {% if page.url == '/henu/' or page.url contains '/henu/' %}
+    	<img src="{{ base_path }}/images/henu-logo.jpg" class="author__avatar" alt="Henan University">
+    {% elsif author.avatar contains "://" %}
+    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
+    {% else %}
+    	<picture>
+    	  <source srcset="{{ base_path }}/images/me.webp" type="image/webp">
+    	  <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}" width="400" height="400" loading="eager" fetchpriority="high">
+    	</picture>
+    {% endif %}
+  </div>
+
+  <div class="author__content">
+    {% if page.url == '/henu/' or page.url contains '/henu/' %}
+    <h3 class="author__name">Henan University</h3>
+    {% else %}
+    <h3 class="author__name">{{ author.name }}</h3>
+    {% endif %}
+    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    <!-- Typing Effect -->
+    <div class="sidebar-typing" aria-live="polite">
+      <span id="sidebar-typing-text"></span><span class="typing-cursor" aria-hidden="true"></span>
+    </div>
+  </div>
+
+  <div class="author__urls-wrapper">
+    <ul class="author__urls social-icons">
+      {% if author.location %}
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
+      {% endif %}
+      {% if author.employer %}
+        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
+      {% endif %}
+      {% if author.uri %}
+        <li><a href="{{ author.uri }}"><i class="fas fa-link" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
+      {% endif %}
+      {% if author.email %}
+        <li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
+      {% endif %}
+      {% if author.googlescholar %}
+        <li><a href="{{ author.googlescholar }}" rel="me"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a></li>
+      {% endif %}
+      {% if author.github %}
+        <li><a href="https://github.com/{{ author.github }}" rel="me"><i class="fab fa-github" aria-hidden="true"></i> Github</a></li>
+      {% endif %}
+      {% if author.linkedin %}
+        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}" rel="me"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+      {% endif %}
+      {% if author.orcid %}
+        <li><a href="{{ author.orcid }}" rel="me"><i class="ai ai-orcid-square ai-fw" aria-hidden="true"></i> ORCID</a></li>
+      {% endif %}
+      {% if author.researchgate %}
+        <li><a href="{{ author.researchgate }}" rel="me"><i class="fab fa-researchgate" aria-hidden="true"></i> ResearchGate</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</div>

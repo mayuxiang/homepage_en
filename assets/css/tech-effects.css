@@ -1,0 +1,486 @@
+/* === Tech Effects for Yuxiang MA's Homepage === */
+/* Font loaded in head/custom.html — do NOT duplicate with @import here */
+
+:root {
+    --accent-cyan: #00b4d8;
+    --accent-green: #2ecc71;
+    --glow-cyan: rgba(0, 180, 216, 0.3);
+    --text-muted: #6c757d;
+}
+
+/* ==========================================
+   Reduced Motion — disable all animations
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .typing-cursor { display: none; }
+    #particle-canvas, #matrix-canvas { display: none; }
+    body.dark-mode .page__content li:hover { transform: none; }
+    body.dark-mode .page__content a::after { display: none; }
+}
+
+/* ==========================================
+   Dark Mode Variables
+   ========================================== */
+body.dark-mode {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2128;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --border-color: rgba(0, 180, 216, 0.12);
+    --link-color: #58a6ff;
+}
+
+/* ==========================================
+   Masthead / Navigation
+   ========================================== */
+.masthead {
+    background-color: #fafbfc;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.masthead__menu-item a {
+    color: #495057;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.masthead__menu-item a:hover {
+    color: var(--accent-cyan);
+    border-bottom-color: var(--accent-cyan);
+}
+
+.masthead__menu-item.is-active a,
+.masthead__menu-item.is-active > a {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    border-bottom-color: var(--accent-cyan);
+}
+
+.masthead__menu-item--lg a {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.masthead__menu-item--lg.is-active a {
+    color: #2c3e50;
+}
+
+body.dark-mode .masthead {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: none;
+}
+
+body.dark-mode .masthead__menu-item a {
+    color: var(--text-secondary);
+    border-bottom-color: transparent;
+}
+
+body.dark-mode .masthead__menu-item a:hover {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--glow-cyan);
+    border-bottom-color: var(--accent-cyan);
+}
+
+body.dark-mode .masthead__menu-item.is-active a,
+body.dark-mode .masthead__menu-item.is-active > a {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    border-bottom-color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--glow-cyan);
+}
+
+body.dark-mode .masthead__menu-item--lg a {
+    color: var(--accent-cyan);
+}
+
+body.dark-mode .masthead__menu-item--lg.is-active a {
+    color: var(--accent-cyan);
+}
+
+.greedy-nav {
+    background-color: transparent;
+}
+
+body.dark-mode .greedy-nav {
+    background-color: transparent;
+}
+
+/* ==========================================
+   Dark Mode - Main content areas
+   ========================================== */
+body.dark-mode,
+body.dark-mode .page,
+body.dark-mode .page__inner,
+body.dark-mode .sidebar,
+body.dark-mode .author__content,
+body.dark-mode .author__urls-wrapper,
+body.dark-mode .page__hero,
+body.dark-mode .page__content,
+body.dark-mode .archive,
+body.dark-mode .grid__wrapper,
+body.dark-mode .grid__item {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+body.dark-mode .sidebar {
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+}
+
+body.dark-mode .author__name {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 10px var(--glow-cyan);
+}
+
+body.dark-mode .author__bio,
+body.dark-mode .author__location {
+    color: var(--text-secondary);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 6px rgba(0, 180, 216, 0.2);
+}
+
+body.dark-mode a {
+    color: var(--link-color);
+    transition: all 0.3s ease;
+}
+
+body.dark-mode a:hover {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--glow-cyan);
+}
+
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode td,
+body.dark-mode th {
+    color: var(--text-primary);
+}
+
+body.dark-mode code,
+body.dark-mode pre {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+body.dark-mode blockquote {
+    border-left-color: var(--accent-cyan);
+    background-color: rgba(0, 180, 216, 0.05);
+}
+
+body.dark-mode .page__footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+body.dark-mode .page__footer-copyright {
+    color: var(--text-secondary);
+}
+
+body.dark-mode .grid__item:hover,
+body.dark-mode article:hover {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.1);
+}
+
+/* ==========================================
+   Avatar — clean in dark mode
+   ========================================== */
+.author__avatar img {
+    border-radius: 50%;
+}
+
+body.dark-mode .author__avatar img {
+    border: none;
+    box-shadow: none;
+}
+
+/* ==========================================
+   Social Icons — NO bullets
+   ========================================== */
+.author__urls.social-icons,
+.author__urls.social-icons li {
+    list-style: none;
+    list-style-type: none;
+}
+
+.author__urls.social-icons {
+    padding-left: 0;
+}
+
+.author__urls.social-icons li::before,
+.author__urls.social-icons li::marker {
+    display: none;
+    content: '';
+}
+
+.author__urls {
+    list-style: none;
+}
+
+body.dark-mode .author__urls {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .author__urls li {
+    list-style: none;
+}
+
+body.dark-mode .author__urls li::before {
+    display: none;
+}
+
+/* ==========================================
+   Footer — narrower
+   ========================================== */
+.page__footer footer {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1.5em;
+}
+
+.page__footer-copyright {
+    font-size: 0.72em;
+    opacity: 0.6;
+    line-height: 1.2;
+}
+
+body.dark-mode .page__footer-copyright {
+    font-size: 0.72em;
+    opacity: 0.4;
+}
+
+/* ==========================================
+   Grid background for dark mode
+   ========================================== */
+body.dark-mode::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 180, 216, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 180, 216, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* ==========================================
+   Scanline Effect (subtle)
+   ========================================== */
+body.dark-mode::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.02) 0px,
+        rgba(0, 0, 0, 0.02) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ==========================================
+   Matrix Canvas
+   ========================================== */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+    pointer-events: none;
+    opacity: 0.05;
+}
+
+/* ==========================================
+   Particle Canvas
+   ========================================== */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.35;
+}
+
+/* ==========================================
+   Sidebar Typing Effect
+   ========================================== */
+.sidebar-typing {
+    margin-top: 8px;
+    font-size: 0.82em;
+    min-height: 1.4em;
+}
+
+#sidebar-typing-text {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-cyan);
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 0.9em;
+    background: var(--accent-cyan);
+    animation: blink 1s infinite;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    box-shadow: 0 0 4px var(--glow-cyan);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ==========================================
+   Enhanced Links (dark mode)
+   ========================================== */
+body.dark-mode .page__content a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .page__content a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-cyan);
+    box-shadow: 0 0 5px var(--glow-cyan);
+    transition: width 0.3s ease;
+}
+
+body.dark-mode .page__content a:hover::after {
+    width: 100%;
+}
+
+body.dark-mode .page__content a:hover {
+    text-shadow: 0 0 8px var(--glow-cyan);
+}
+
+/* ==========================================
+   List hover effect (dark mode)
+   ========================================== */
+body.dark-mode .page__content li {
+    transition: all 0.3s ease;
+    padding: 2px 0;
+}
+
+body.dark-mode .page__content li:hover {
+    transform: translateX(5px);
+    color: var(--accent-cyan);
+}
+
+/* ==========================================
+   Dark Mode Toggle Button
+   ========================================== */
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #e9ecef;
+    background: #fafbfc;
+    color: #495057;
+    font-size: 1.2em;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dark-mode-toggle:hover {
+    box-shadow: 0 0 15px var(--glow-cyan);
+    transform: scale(1.1);
+}
+
+.dark-mode-toggle:focus-visible {
+    outline: 2px solid var(--accent-cyan);
+    outline-offset: 2px;
+}
+
+body.dark-mode .dark-mode-toggle {
+    border-color: var(--border-color);
+    background: var(--bg-secondary);
+    color: var(--accent-cyan);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   Scrollbar (dark mode)
+   ========================================== */
+body.dark-mode ::-webkit-scrollbar {
+    width: 6px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+    background: rgba(0, 180, 216, 0.3);
+    border-radius: 3px;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 180, 216, 0.5);
+}
+
+body.dark-mode ::selection {
+    background: rgba(0, 180, 216, 0.25);
+    color: #e6edf3;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+@media (max-width: 768px) {
+    .sidebar-typing {
+        font-size: 0.75em;
+    }
+    .dark-mode-toggle {
+        bottom: 15px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 1em;
+    }
+}
