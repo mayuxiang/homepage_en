@@ -495,3 +495,20 @@ body.dark-mode ::selection {
     text-decoration: none !important;
     color: #0096c7 !important;
 }
+
+/* ===== Page width optimization for readability ===== */
+/* Reduce max-width for better reading experience (60-75 chars per line) */
+#main,
+.masthead__inner-wrap,
+.page__footer footer,
+.wrapper {
+  max-width: 1000px;
+}
+@media (min-width: 87.5em) {
+  #main,
+  .masthead__inner-wrap,
+  .page__footer footer,
+  .wrapper {
+    max-width: 1100px;
+  }
+}
