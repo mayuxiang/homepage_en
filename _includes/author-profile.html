@@ -43,9 +43,7 @@
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-link" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
-      {% if author.email_user and author.email_domain %}
-        <li><a href="#" class="email-link" data-user="{{ author.email_user }}" data-domain="{{ author.email_domain }}"><i class="fas fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
-      {% endif %}
+
       {% if author.googlescholar %}
         <li><a href="{{ author.googlescholar }}" rel="me"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a></li>
       {% endif %}
