@@ -6,7 +6,7 @@ name                     : "Yuxiang MA"
 description              : &description "Dr. MA Yuxiang's personal homepage"
 url                      : "https://yuxiangma.com"
 baseurl                  :
-repository               : "mayuxiang/yuxiangma.com"
+repository               : "mayuxiang/homepage"
 teaser                   :
 breadcrumbs              : false
 words_per_minute         : 200
