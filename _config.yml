@@ -1,7 +1,7 @@
 # Site Settings
 locale                   : "en-US"
 title                    : "Yuxiang MA"
-title_separator          : "|"
+title_separator          : "-"
 name                     : "Yuxiang MA"
 description              : &description "Dr. MA Yuxiang's personal homepage"
 url                      : "https://yuxiangma.com"
