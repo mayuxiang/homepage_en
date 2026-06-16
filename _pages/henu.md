@@ -15,6 +15,14 @@ redirect_from:
   border-radius: 8px;
   margin-top: 1.5em;
   aspect-ratio: 16 / 9;
+  padding-bottom: 56.25%; /* fallback for browsers without aspect-ratio support */
+  height: 0;
+}
+@supports (aspect-ratio: 16 / 9) {
+  .henu-carousel {
+    padding-bottom: 0;
+    height: auto;
+  }
 }
 .henu-carousel-inner {
   position: relative;

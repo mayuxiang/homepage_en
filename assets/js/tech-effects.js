@@ -74,10 +74,12 @@
 
     function drawParticles() {
         if (!pCtx || paused) return;
-        pCtx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+        // Skip particle drawing in light mode to save CPU
         var isDark = document.body.classList.contains('dark-mode');
-        var dotColor = isDark ? '0,180,216' : '100,100,100';
-        var lineColor = isDark ? '0,180,216' : '150,150,150';
+        if (!isDark) { requestAnimationFrame(drawParticles); return; }
+        pCtx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+        var dotColor = '0,180,216';
+        var lineColor = '0,180,216';
 
         for (var i = 0; i < particles.length; i++) {
             var p = particles[i];
